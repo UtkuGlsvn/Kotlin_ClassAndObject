@@ -14,7 +14,25 @@ open class Vehicle()
     }
 }
 
+//abstract
+abstract class Human(_name:String){
+    private var name:String =_name
 
+    abstract fun nameHuman(name:String)
+    fun yourName()
+    {
+        println("name: ${this.name}")
+    }
+}
+
+class Personel(_name:String): Human(_name)
+{
+    override fun nameHuman(name: String) {
+        println("name: $name")
+    }
+
+
+}
 class Car(_hız:Int, _plaka:String): Vehicle()
 {
     //getter and setter
@@ -60,14 +78,15 @@ fun main(args : Array <String>)
 {
     var car1 = Car(25,"06 A 06")
     var v = Vehicle()
+    var personel = Personel("admin")
     println(car1.hız.toString()+"    "+car1.plaka+"   "+car1.maxHız)
     var cartype=Car.CarType("Range Rover",2005)
     var cartype2=Car.CarType("Range Rover",2005,50,"06 ab 07")
     println(cartype.type+"   "+cartype.model)
     println(v.setMotorGuc(50))
     println(car1.setMotorGuc(50))
-
-
+    println(personel.yourName())
+    println(personel.nameHuman("utku"))
 }
 
 
