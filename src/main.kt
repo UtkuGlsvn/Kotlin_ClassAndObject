@@ -1,6 +1,21 @@
-import kotlin.contracts.contract
+//inheritance
+open class Vehicle()
+{
 
-class Car(_hız:Int, _plaka:String)
+    var motorGucu:Int=0
+
+    init {
+        this.motorGucu=motorGucu
+    }
+
+    open fun setMotorGuc(motorGucu: Int): Int {
+         this.motorGucu=motorGucu
+        return this.motorGucu
+    }
+}
+
+
+class Car(_hız:Int, _plaka:String): Vehicle()
 {
     //getter and setter
     var hız:Int=_hız
@@ -16,11 +31,14 @@ class Car(_hız:Int, _plaka:String)
     init {
         this.hız=_hız
         this.plaka=_plaka
-        println("hız:$hız plaka:$plaka maximum Hız: $maxHız")
+        println("hız:$hız plaka:$plaka maximum Hız: $maxHız $motorGucu")
     }
 
-    //Seconder Constructor
-
+    //Overriden Method
+    override fun setMotorGuc(motorGucu: Int): Int {
+         this.motorGucu=motorGucu/2
+         return this.motorGucu
+    }
 
     class CarType(_type:String,_model:Int)
     {
@@ -41,10 +59,17 @@ class Car(_hız:Int, _plaka:String)
 fun main(args : Array <String>)
 {
     var car1 = Car(25,"06 A 06")
+    var v = Vehicle()
     println(car1.hız.toString()+"    "+car1.plaka+"   "+car1.maxHız)
     var cartype=Car.CarType("Range Rover",2005)
     var cartype2=Car.CarType("Range Rover",2005,50,"06 ab 07")
-    print(cartype.type+"   "+cartype.model)
+    println(cartype.type+"   "+cartype.model)
+    println(v.setMotorGuc(50))
+    println(car1.setMotorGuc(50))
 
 
 }
+
+
+
+
