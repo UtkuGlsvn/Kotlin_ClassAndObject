@@ -1,5 +1,13 @@
+//interface
+interface Iclass
+{
+    fun Iclassfun()
+    {
+        println("Interface Class")
+    }
+}
 //inheritance
-open class Vehicle()
+open class Vehicle
 {
 
     var motorGucu:Int=0
@@ -33,8 +41,12 @@ class Personel(_name:String): Human(_name)
 
 
 }
-class Car(_hız:Int, _plaka:String): Vehicle()
+    class Car(_hız:Int, _plaka:String): Vehicle(), Iclass
 {
+    override fun Iclassfun() {
+        super.Iclassfun()
+        println("overriding")
+    }
     //getter and setter
     var hız:Int=_hız
         get() = field
@@ -52,7 +64,7 @@ class Car(_hız:Int, _plaka:String): Vehicle()
         println("hız:$hız plaka:$plaka maximum Hız: $maxHız $motorGucu")
     }
 
-    //Overriden Method
+    //Overriding Method
     override fun setMotorGuc(motorGucu: Int): Int {
          this.motorGucu=motorGucu/2
          return this.motorGucu
@@ -87,9 +99,7 @@ fun main(args : Array <String>)
     println(car1.setMotorGuc(50))
     println(personel.yourName())
     println(personel.nameHuman("utku"))
-    //DataClass
-    var dataClass=DataClass("utku",7)
-    println("Data class $dataClass:  Data class ilk eleman: ${dataClass.str} ikinci eleman:  ${dataClass.i}")
+
 }
 
 
