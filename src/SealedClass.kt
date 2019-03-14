@@ -1,4 +1,4 @@
-"sealed class MyOperation {
+sealed class MyOperation {
     class Add(val value: Int) : MyOperation()
     class Substract(val value: Int) : MyOperation()
     class Multiply(val value: Int) : MyOperation()
