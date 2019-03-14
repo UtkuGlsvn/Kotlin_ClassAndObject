@@ -87,6 +87,9 @@ fun main(args : Array <String>)
     println(car1.setMotorGuc(50))
     println(personel.yourName())
     println(personel.nameHuman("utku"))
+    //DataClass
+    var dataClass=DataClass("utku",7)
+    println("Data class $dataClass:  Data class ilk eleman: ${dataClass.str} ikinci eleman:  ${dataClass.i}")
 }
 
 

@@ -1,0 +1,1 @@
+data class DataClass(var str:String, var i:Int)
